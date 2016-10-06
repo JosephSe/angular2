@@ -1,0 +1,58 @@
+{
+  "project": {
+    "version": "1.0.0-beta.16",
+    "name": "prod-dashboard2"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": "assets",
+      "index": "index.html",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+        "styles.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/font-awesome/css/font-awesome.css",
+        "../node_modules/nprogress/nprogress.css",
+        "../node_modules/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css",
+        "../node_modules/jqvmap/dist/jqvmap.min.css"
+      ],
+      "scripts": ["../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/bootstrap-progressbar/bootstrap-progressbar.min.js",
+        "../node_modules/nprogress/nprogress.js",
+        "../node_modules/chart.js/dist/Chart.min.js",
+        "../node_modules/flot/jquery.flot.js",
+        "../node_modules/flot/jquery.flot.pie.js",
+        "../node_modules/flot/jquery.flot.time.js",
+        "../node_modules/flot/jquery.flot.stack.js",
+        "../node_modules/flot/jquery.flot.resize.js"],
+      "environments": {
+        "source": "environments/environment.ts",
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "addons": [],
+  "packages": [],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "prefixInterfaces": false
+  }
+}

@@ -1,0 +1,6 @@
+<div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+  <span class="count_top"><i class="fa fa-user">{{title}}</i></span>
+  <div class="count">{{count}}</div>
+  <span class="count_bottom">
+  <i [ngClass] = "{'green': dataType == 'actual', 'red':dataType == 'simulated'}">{{dataType}}</i></span>
+</div>
