@@ -11,11 +11,11 @@ export class SearchChartComponent {
   }
 
   public line_ChartData = [
-    ['Year', 'Sales', 'Expenses'],
-    ['2004', 1000, 400],
-    ['2005', 1170, 460],
-    ['2006', 660, 1120],
-    ['2007', 1030, 540]];
+    ['Year', 'Searches', 'Bookings'],
+    [new Date(2016,10,3), 1000, 40],
+    [new Date(2016,10,4), 1170, 46],
+    [new Date(2016,10,5), 660, 11],
+    [new Date(2016,10,6), 1030, 54]];
 
   public line_ChartOptions = {
     title: 'Search Requests',
