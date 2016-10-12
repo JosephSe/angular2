@@ -9,6 +9,7 @@ import { SearchChartComponent } from './search-chart/search-chart.component';
 import { TopClientsComponent } from './top-clients/top-clients.component';
 import { ChartDirective } from './shared/chart.directive';
 import { GoogleChartDirective } from './shared/google-chart.directive';
+import { TopNavComponent } from './top-nav/top-nav.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GoogleChartDirective } from './shared/google-chart.directive';
     SearchChartComponent,
     TopClientsComponent,
     ChartDirective,
-    GoogleChartDirective
+    GoogleChartDirective,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,

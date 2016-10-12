@@ -1,1 +1,26 @@
-<div id="pie_chart" [chartData]="pie_ChartData" [chartOptions] = "pie_ChartOptions" chartType="PieChart" GoogleChart></div>
+<div class="row x_panel tile">
+  <div class="col-md-12 x_title">
+    <h3>Bookings</h3>
+  </div>
+  <div class="col-md-12 x_content">
+    <div id="bookings_chart" [chartData]="booking_ChartData" [chartOptions]="booking_ChartOptions" chartType="AreaChart" GoogleChart class="dashboard_graph"></div>
+  </div>
+</div>
+
+<div class="row x_panel tile">
+  <div class="col-md-12 x_title">
+    <h3>Searches</h3>
+  </div>
+  <div class="col-md-12 x_content">
+    <div id="searches-chart" [chartData]="search_ChartData" [chartOptions]="search_ChartOptions" chartType="AreaChart" GoogleChart class="dashboard_graph"></div>
+  </div>
+</div>
+
+<div class="row x_panel tile">
+  <div class="col-md-12 x_title">
+    <h3>Cancellations</h3>
+  </div>
+  <div class="col-md-12 x_content">
+    <div id="cancellation-chart" [chartData]="cancellation_ChartData" [chartOptions]="cancellation_ChartOptions" chartType="AreaChart" GoogleChart class="dashboard_graph"></div>
+  </div>
+</div>

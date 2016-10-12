@@ -15,12 +15,12 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/font-awesome/css/font-awesome.css",
         "../node_modules/nprogress/nprogress.css",
         "../node_modules/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css",
-        "../node_modules/jqvmap/dist/jqvmap.min.css"
+        "../node_modules/jqvmap/dist/jqvmap.min.css",
+        "styles.css"
       ],
       "scripts": ["../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",

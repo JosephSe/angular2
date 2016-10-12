@@ -1,37 +1,30 @@
 import { Injectable } from '@angular/core';
+import {Http} from '@angular/http';
+import 'rxjs/add/operator/map';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class DashboardService {
 
+  subPath = "/es/dashboard/summary/"
   getDashboardData(): Object {
     return {}
   }
 
-  getTopTilesData(): Object[] {
-    return [{
-      text: "Total Bookings",
-      value: 25,
-      dataType: "actual"
-    }, {
-        text: "Total Searches",
-        value: 1253,
-        dataType: "actual"
-      }, {
-        text: "Top Client",
-        value: 13523,
-        dataType: "actual"
-      }, {
-        text: "Total Clients",
-        value: 4,
-        dataType: "actual"
-      }, {
-        text: "Total Cancellations",
-        value: 2,
-        dataType: "simulated"
-      }
-    ]
+  getTodaysData(dayStr) {
+    var url = environment.serverURL + this.subPath + dayStr;
+    return this.call(url);
   }
 
-  constructor() { }
+  getBookingSummary() {
+    var url = environment.serverURL + this.subPath + "all"
+    return this.call(url);
+  }
+
+  private call(url) {
+    return this._http.get(url).map(res => res.json());
+  }
+
+  constructor(private _http:Http) { }
 
 }
