@@ -1,3 +1,4 @@
+<!--
 <div class="row x_panel tile">
   <div class="col-md-12 x_title">
     <h3>Bookings</h3>
@@ -23,4 +24,17 @@
   <div class="col-md-12 x_content">
     <div id="cancellation-chart" [chartData]="cancellation_ChartData" [chartOptions]="cancellation_ChartOptions" chartType="AreaChart" GoogleChart class="dashboard_graph"></div>
   </div>
+</div>
+-->
+
+<div class="col-md-4 col-sm-4 col-xs-12">
+<div class="row x_panel tile">
+  <div class="x_title">
+    <h5>Properties</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart" [chartData]="pie_ChartData" [chartOptions] = "pie_ChartOptions" chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
 </div>
