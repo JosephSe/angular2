@@ -2,6 +2,7 @@ import {Component, AfterViewInit, Input} from '@angular/core';
 import {DashboardService} from '../shared/dashboard.service';
 import {Observable} from 'rxjs/Rx';
 
+
 @Component({
   selector: 'search-chart',
   templateUrl: './search-chart.component.html',
@@ -14,8 +15,8 @@ export class SearchChartComponent {
   textColor = '#73879C'
 
   constructor(private _dashboardService:DashboardService) {
-    _dashboardService.getPieChartData().subscribe(summary => this.loadDummyData(summary));
-    /** new  **/ Observable.interval(10000).subscribe(some =>_dashboardService.getPieChartData().subscribe(summary => this.loadDummyData(summary)));
+    _dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary));
+    /** new  **/ Observable.interval(10000).subscribe(some =>_dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary)));
     _dashboardService.getBookingSummary().subscribe(summary => this.updateCharts(summary));
     Observable.interval(10000).subscribe(some => _dashboardService.getBookingSummary().subscribe(summary => this.updateCharts(summary)));
   }
@@ -117,25 +118,28 @@ export class SearchChartComponent {
   };
 
   public pie_ChartOptions = {
+
     titleTextStyle: {
+    color: this.textColor
+  },
+  legend: {
+    position: 'bottom',
+    textStyle: {
       color: this.textColor
-    },
-    legend: {
-      position: 'bottom',
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    hAxis: {
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    vAxis: {
-      textStyle: {
-        color: this.textColor
-      }
     }
+  },
+  hAxis: {
+    textStyle: {
+      color: this.textColor
+    }
+  },
+  vAxis: {
+    textStyle: {
+      color: this.textColor
+    }
+  },
+  width: 300,
+      height: 200
   };
 
 
@@ -148,7 +152,7 @@ public chartData_Markup = [];
 public chartData_InventoryRestriction= [];
 public chartData_InventoryUsage= [];
 
-private loadDummyData(data){
+private loadPieChartData(data){
   console.log(data);
   var  pie_chart_data_Property = [
       ['System', 'count'],
@@ -212,14 +216,14 @@ this.chartData_InventoryUsage = pie_chart_data_InventoryUsage;
 
 }
 
-/** chart options for property pie chart **/
+/** chart options for property pie chart
 public ChartOptions_Property = {
    title: 'Properties',
    width: 300,
        height: 200
 };
 
-/** chart options for property contract pie chart**/
+
 public ChartOptions_PropertyContract = {
    title: 'Property Contract',
    width: 300,
@@ -254,5 +258,6 @@ public ChartOptions_InventoryUsage= {
    title: 'Inventory Usage',
    width: 300,
        height: 200
-};
+}; **/
+
 }
