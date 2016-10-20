@@ -216,48 +216,5 @@ this.chartData_InventoryUsage = pie_chart_data_InventoryUsage;
 
 }
 
-/** chart options for property pie chart
-public ChartOptions_Property = {
-   title: 'Properties',
-   width: 300,
-       height: 200
-};
-
-
-public ChartOptions_PropertyContract = {
-   title: 'Property Contract',
-   width: 300,
-       height: 200
-};
-
-public ChartOptions_RatePlan = {
-   title: 'RatePlan',
-   width: 300,
-       height: 200
-};
-
-public ChartOptions_Adjustment = {
-   title: 'Adjustment',
-   width: 300,
-       height: 200
-};
-
-public ChartOptions_Markup= {
-   title: 'Markup',
-   width: 300,
-       height: 200
-};
-
-public ChartOptions_InventoryRestriction= {
-   title: 'Inventory Restriction',
-   width: 300,
-       height: 200
-};
-
-public ChartOptions_InventoryUsage= {
-   title: 'Inventory Usage',
-   width: 300,
-       height: 200
-}; **/
 
 }

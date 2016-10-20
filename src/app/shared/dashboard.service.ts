@@ -26,7 +26,7 @@ export class DashboardService {
   }
 /* adding new implementation for getting data for making pie chart for all the entities*/
 getPieChartData(){
-var dummyurl = "/app/shared/dummy_data.json";
+
 var  dataUrl = "http://10.102.27.52:9000/dashboard/system/entitycount";
 return this._http.get(dataUrl).map(res => res.json());
 }
