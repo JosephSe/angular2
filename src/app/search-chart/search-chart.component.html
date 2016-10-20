@@ -27,14 +27,188 @@
 </div>
 -->
 
+<!--
 <div class="col-md-4 col-sm-4 col-xs-12">
+
+<tr>
+<td *ngFor="let pie_chartData of pie_chart_data ; let i = index;">
 <div class="row x_panel tile">
+
   <div class="x_title">
-    <h5>Properties</h5>
+    <h5>{{pie_ChartOptions_entity[i].title}}</h5>
   </div>
   <div class="x_content">
-    <div id="pie_chart" [chartData]="pie_ChartData" [chartOptions] = "pie_ChartOptions" chartType="PieChart" GoogleChart></div>
+    <div id="pie_chart_{{i}}" [chartData]="pie_chartData" [chartOptions] =" pie_ChartOptions_entity[i] "chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+</td>
+</tr>
+</div> -->
+
+<!-- <div class="col-md-4 col-sm-4 col-xs-12 ">
+
+<tr>
+<td>
+<div class="row x_panel tile">
+
+  <div class="x_title">
+    <h5>{{ChartOptions_Property.title}}</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_Property" [chartData]="chartData_Property" [chartOptions] ="ChartOptions_Property"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+</td>
+<td>
+<div class="row x_panel tile">
+
+  <div class="x_title">
+    <h5>{{ChartOptions_PropertyContract.title}}</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_PropertyContract" [chartData]="chartData_PropertyContract" [chartOptions] ="ChartOptions_PropertyContract"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+</td>
+
+<td>
+<div class="row x_panel tile">
+
+  <div class="x_title">
+    <h5>{{ChartOptions_RatePlan.title}}</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_RatePlan" [chartData]="chartData_RatePlan" [chartOptions] ="ChartOptions_RatePlan"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+</td>
+
+<td>
+<div class="row x_panel tile">
+
+  <div class="x_title">
+    <h5>{{ChartOptions_Adjustment.title}}</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_Adjustment" [chartData]="chartData_Adjustment" [chartOptions] ="ChartOptions_Adjustment"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+</td>
+
+<td>
+<div class="row x_panel tile">
+
+  <div class="x_title">
+    <h5>{{ChartOptions_Markup.title}}</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_Markup" [chartData]="chartData_Markup" [chartOptions] ="ChartOptions_Markup"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+</td>
+
+<td>
+<div class="row x_panel tile">
+
+  <div class="x_title">
+    <h5>{{ChartOptions_InventoryRestriction.title}}</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_InventoryRestriction" [chartData]="chartData_InventoryRestriction" [chartOptions] ="ChartOptions_InventoryRestriction"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+</td>
+
+<td>
+<div class="row x_panel tile">
+
+  <div class="x_title">
+    <h5>{{ChartOptions_InventoryUsage.title}}</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_InventoryUsage" [chartData]="chartData_InventoryUsage" [chartOptions] ="ChartOptions_InventoryUsage"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+</td>
+</tr>
+</div> -->
+
+
+
+<div class ="row">
+<div class="col-md-3 col-sm-4 col-xs-12">
+
+  <div class="x_title">
+    <h5>Property.title</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_Property" [chartData]="chartData_Property" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
   </div>
 </div>
 
+
+<div class="col-md-3 col-sm-4 col-xs-12">
+
+  <div class="x_title">
+    <h5>Property Contract</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_PropertyContract" [chartData]="chartData_PropertyContract" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+
+
+<div class="col-md-3 col-sm-4 col-xs-12">
+
+  <div class="x_title">
+    <h5>RatePlan</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_RatePlan" [chartData]="chartData_RatePlan" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+
+
+<div class="col-md-3 col-sm-4 col-xs-12">
+
+  <div class="x_title">
+    <h5>Adjustment</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_Adjustment" [chartData]="chartData_Adjustment" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+<div class="col-md-3 col-sm-4 col-xs-12">
+
+  <div class="x_title">
+    <h5>Markup</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_Markup" [chartData]="chartData_Markup" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+
+<div class="col-md-3 col-sm-4 col-xs-12">
+
+  <div class="x_title">
+    <h5>Inventory Restriction</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_InventoryRestriction" [chartData]="chartData_InventoryRestriction" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+<div class="col-md-3 col-sm-4 col-xs-12">
+
+  <div class="x_title">
+    <h5>InventoryUsage</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_InventoryUsage" [chartData]="chartData_InventoryUsage" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
 </div>
