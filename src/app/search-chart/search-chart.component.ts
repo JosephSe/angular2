@@ -16,11 +16,7 @@ export class SearchChartComponent {
 
   textColor = '#73879C'
 
-<<<<<<< HEAD
   constructor(private _dashboardService:DashboardService, private router: Router) {
-=======
-  constructor(private _dashboardService:DashboardService) {
->>>>>>> 1b5e6d0c5f3d475b7365886ca41b4b8152f42e3f
     _dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary));
     /** new  **/ Observable.interval(10000).subscribe(some =>_dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary)));
     _dashboardService.getBookingSummary().subscribe(summary => this.updateCharts(summary));
@@ -260,10 +256,6 @@ getPropertyDetails(): void {
             getInventoryUsageDetails(): void {
               console.log("into details");
 
-<<<<<<< HEAD
                 this.router.navigateByUrl('/inventory-usage');
               }
-=======
-
->>>>>>> 1b5e6d0c5f3d475b7365886ca41b4b8152f42e3f
 }
