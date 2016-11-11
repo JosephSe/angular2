@@ -45,7 +45,7 @@
 </tr>
 </div> -->
 
-<div class="col-md-4 col-sm-4 col-xs-12">
+<!-- <div class="col-md-4 col-sm-4 col-xs-12 ">
 
 <tr>
 <td>
@@ -131,4 +131,90 @@
 </div>
 </td>
 </tr>
+</div> -->
+
+
+
+<div class ="row">
+<!--  <nav> -->
+
+<div (click)="getPropertyDetails()" class="col-md-3 col-sm-4 col-xs-12" >
+
+  <div class="x_title" >
+  <!--  <a routerLink="/property">Property</a> -->
+  <h5> Property</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_Property" [chartData]="chartData_Property" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
 </div>
+
+
+<div (click)="getPropertyContractDetails()" class="col-md-3 col-sm-4 col-xs-12" >
+
+  <div class="x_title">
+  <h5>Property Contract</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_PropertyContract" [chartData]="chartData_PropertyContract" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+
+
+<div (click)="getRatePlanDetails()" class="col-md-3 col-sm-4 col-xs-12" >
+
+  <div class="x_title">
+    <h5>RatePlan</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_RatePlan" [chartData]="chartData_RatePlan" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+
+
+<div (click)="getAdjustmentsDetails()" class="col-md-3 col-sm-4 col-xs-12" >
+
+  <div class="x_title">
+    <h5>Adjustment</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_Adjustment" [chartData]="chartData_Adjustment" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+<div (click)="getMarkupDetails()" class="col-md-3 col-sm-4 col-xs-12" >
+
+  <div class="x_title">
+    <h5>Markup</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_Markup" [chartData]="chartData_Markup" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+
+<div (click)="getInventoryRestrictionsDetails()" class="col-md-3 col-sm-4 col-xs-12" >
+
+  <div class="x_title">
+    <h5>Inventory Restriction</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_InventoryRestrictions" [chartData]="chartData_InventoryRestrictions" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+
+<div (click)="getInventoryUsageDetails()" class="col-md-3 col-sm-4 col-xs-12" >
+
+  <div class="x_title">
+    <h5>InventoryUsage</h5>
+  </div>
+  <div class="x_content">
+    <div id="pie_chart_InventoryUsage" [chartData]="chartData_InventoryUsage" [chartOptions] ="pie_ChartOptions"chartType="PieChart" GoogleChart></div>
+  </div>
+</div>
+<!-- </nav> -->
+
+</div>
+<!-- <router-outlet></router-outlet> -->

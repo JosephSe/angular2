@@ -11,8 +11,27 @@ import { ChartDirective } from './shared/chart.directive';
 import { GoogleChartDirective } from './shared/google-chart.directive';
 import { TopNavComponent } from './top-nav/top-nav.component';
 
+/* new added */
+import { PropertyContractComponent } from './entity-details/property-contract.component';
+import { Routes, RouterModule } from '@angular/router';
+import { PropertyComponent } from './entity-details/property.component';
+import { RatePlanComponent } from './entity-details/rate-plan.component';
+import { AdjustmentsComponent } from './entity-details/adjustments.component';
+import { MarkupComponent } from './entity-details/markup.component';
+import { InventoryUsageComponent } from './entity-details/inventory-usage.component';
+import { InventoryRestrictionsComponent } from './entity-details/inventory-restrictions.component';
+import { ProdDashboard2RoutingModule } from './app-routing.module';
+
+
 @NgModule({
   declarations: [
+    InventoryUsageComponent,
+    InventoryRestrictionsComponent,
+    AdjustmentsComponent,
+    MarkupComponent,
+    RatePlanComponent,
+    PropertyContractComponent,
+    PropertyComponent,/*new*/
     AppComponent,
     TopTilesComponent,
     TopTileComponent,
@@ -21,12 +40,16 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     ChartDirective,
     GoogleChartDirective,
     TopNavComponent
+
   ],
-  imports: [
+  imports : [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    ProdDashboard2RoutingModule
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule { }

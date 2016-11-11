@@ -1,6 +1,8 @@
 import {Component, AfterViewInit, Input} from '@angular/core';
 import {DashboardService} from '../shared/dashboard.service';
 import {Observable} from 'rxjs/Rx';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'search-chart',
@@ -13,9 +15,9 @@ export class SearchChartComponent {
 
   textColor = '#73879C'
 
-  constructor(private _dashboardService:DashboardService) {
-    _dashboardService.getPieChartData().subscribe(summary => this.loadDummyData(summary));
-    /** new  **/ Observable.interval(10000).subscribe(some =>_dashboardService.getPieChartData().subscribe(summary => this.loadDummyData(summary)));
+  constructor(private _dashboardService:DashboardService, private router: Router) {
+    _dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary));
+    /** new  **/ Observable.interval(10000).subscribe(some =>_dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary)));
     _dashboardService.getBookingSummary().subscribe(summary => this.updateCharts(summary));
     Observable.interval(10000).subscribe(some => _dashboardService.getBookingSummary().subscribe(summary => this.updateCharts(summary)));
   }
@@ -117,25 +119,28 @@ export class SearchChartComponent {
   };
 
   public pie_ChartOptions = {
+
     titleTextStyle: {
+    color: this.textColor
+  },
+  legend: {
+    position: 'bottom',
+    textStyle: {
       color: this.textColor
-    },
-    legend: {
-      position: 'bottom',
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    hAxis: {
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    vAxis: {
-      textStyle: {
-        color: this.textColor
-      }
     }
+  },
+  hAxis: {
+    textStyle: {
+      color: this.textColor
+    }
+  },
+  vAxis: {
+    textStyle: {
+      color: this.textColor
+    }
+  },
+  width: 300,
+      height: 200
   };
 
 
@@ -145,10 +150,10 @@ public chartData_PropertyContract = [];
 public chartData_RatePlan = [];
 public chartData_Adjustment = [];
 public chartData_Markup = [];
-public chartData_InventoryRestriction= [];
+public chartData_InventoryRestrictions= [];
 public chartData_InventoryUsage= [];
 
-private loadDummyData(data){
+private loadPieChartData(data){
   console.log(data);
   var  pie_chart_data_Property = [
       ['System', 'count'],
@@ -190,7 +195,7 @@ var pie_chart_data_Markup =[
         ['Coherence', data[4].systems.Coherence]
 ];
 
-var pie_chart_data_InventoryRestriction =[
+var pie_chart_data_InventoryRestrictions =[
         ['System', 'count'],
         ['GC', data[5].systems.GC],
         ['Coherence', data[5].systems.Coherence]
@@ -207,52 +212,49 @@ this.chartData_PropertyContract = pie_chart_data_PropertyContract;
 this.chartData_RatePlan = pie_chart_data_RatePlan;
 this.chartData_Adjustment = pie_chart_data_Adjustment;
 this.chartData_Markup = pie_chart_data_Markup;
-this.chartData_InventoryRestriction = pie_chart_data_InventoryRestriction;
+this.chartData_InventoryRestrictions = pie_chart_data_InventoryRestrictions;
 this.chartData_InventoryUsage = pie_chart_data_InventoryUsage;
 
 }
+getPropertyDetails(): void {
+  console.log("into details");
 
-/** chart options for property pie chart **/
-public ChartOptions_Property = {
-   title: 'Properties',
-   width: 300,
-       height: 200
-};
+    this.router.navigateByUrl('/property');
+  }
 
-/** chart options for property contract pie chart**/
-public ChartOptions_PropertyContract = {
-   title: 'Property Contract',
-   width: 300,
-       height: 200
-};
+  getPropertyContractDetails(): void {
+    console.log("into details");
 
-public ChartOptions_RatePlan = {
-   title: 'RatePlan',
-   width: 300,
-       height: 200
-};
+      this.router.navigateByUrl('/property-contract');
+    }
 
-public ChartOptions_Adjustment = {
-   title: 'Adjustment',
-   width: 300,
-       height: 200
-};
+    getRatePlanDetails(): void {
+      console.log("into details");
 
-public ChartOptions_Markup= {
-   title: 'Markup',
-   width: 300,
-       height: 200
-};
+        this.router.navigateByUrl('/rate-plan');
+      }
 
-public ChartOptions_InventoryRestriction= {
-   title: 'Inventory Restriction',
-   width: 300,
-       height: 200
-};
+      getMarkupDetails(): void {
+        console.log("into details");
 
-public ChartOptions_InventoryUsage= {
-   title: 'Inventory Usage',
-   width: 300,
-       height: 200
-};
+          this.router.navigateByUrl('/markup');
+        }
+
+        getAdjustmentsDetails(): void {
+          console.log("into details");
+
+            this.router.navigateByUrl('/adjustments');
+          }
+
+          getInventoryRestrictionsDetails(): void {
+            console.log("into details");
+
+              this.router.navigateByUrl('/inventory-restrictions');
+            }
+
+            getInventoryUsageDetails(): void {
+              console.log("into details");
+
+                this.router.navigateByUrl('/inventory-usage');
+              }
 }

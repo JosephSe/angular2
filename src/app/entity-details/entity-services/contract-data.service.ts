@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
-export class DashboardService {
+export class ContractDataService {
 
-  subPath = "/es/dashboard/summary/"
+/*  subPath = "/es/dashboard/summary/"
   getDashboardData(): Object {
     return {}
   }
@@ -24,10 +24,11 @@ export class DashboardService {
   private call(url) {
     return this._http.get(url).map(res => res.json());
   }
-/* adding new implementation for getting data for making pie chart for all the entities*/
-getPieChartData(){
-var dummyUrl = "app/shared/dummy_data.json";
-var  dataUrl = "http://10.102.27.50:9000/dashboard/entity/count";
+adding new implementation for getting data for making pie chart for all the entities */
+getContractData(){
+   console.log("into this get data");
+var dummyUrl = "app/entity-details/entity-services/dummy_data_contract.json";
+var  dataUrl = "http://10.102.27.50:9000/dashboard/entity/details/propertycontract";
 return this._http.get(dataUrl).map(res => res.json());
 }
 

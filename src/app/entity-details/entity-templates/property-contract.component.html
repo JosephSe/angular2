@@ -1,0 +1,40 @@
+
+
+<div class= "row">
+
+  <div class="contract_detail_title col-md-12 col-sm-12 col-xs-12">
+<h1>Property Contracts details</h1>
+</div>
+
+<div class ="contract_status_details col-md-12 col-sm-12 col-xs-12 ">
+
+  <div class="contract_status_content">
+<div id="bar_chart_contract_status" [chartData]="contractStatus"  [chartOptions] = "bar_ChartOptions_contract_status" chartType="BarChart" GoogleChart></div>
+</div>
+
+</div>
+
+ <div class ="contract_by_currency_details col-md-12 col-sm-12 col-xs-12 ">
+
+  <div class="contract_by_currency_content">
+<div id="bar_chart_contract_by_currency" [chartData]="contarctByCurrency"  [chartOptions] = "bar_ChartOptions_contract_having_currency" chartType="BarChart" GoogleChart></div>
+</div>
+
+</div>
+
+<div class ="contract_by_model_details col-md-12 col-sm-12 col-xs-12 ">
+
+  <div class="contract_by_model_content">
+<div id="bar_chart_contract_by_model" [chartData]="contractByModel"  [chartOptions] = "bar_ChartOptions_contract_having_model" chartType="BarChart" GoogleChart></div>
+</div>
+
+</div> 
+
+
+
+<div class="contract_back_button col-md-12 col-sm-12 col-xs-12">
+
+<button (click)="goBack()">Back</button>
+</div>
+
+</div>

@@ -1,11 +1,56 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { PropertyContractComponent } from './entity-details/property-contract.component';
+
+import { PropertyComponent } from './entity-details/property.component';
+import { RatePlanComponent } from './entity-details/rate-plan.component';
+import { AdjustmentsComponent } from './entity-details/adjustments.component';
+import { MarkupComponent } from './entity-details/markup.component';
+import { InventoryUsageComponent } from './entity-details/inventory-usage.component';
+import { InventoryRestrictionsComponent } from './entity-details/inventory-restrictions.component';
+import { SearchChartComponent } from './search-chart/search-chart.component';
+
+
+const routes: Routes = [{
+  path: '',
+  redirectTo: '/pieChart',
+  pathMatch: 'full'
+},  {
+      path: 'pieChart',
+      component: SearchChartComponent
+    }, {
+     path: 'property-contract',
+     component: PropertyContractComponent
+   },
+   {
+     path: 'property',
+     component: PropertyComponent
+   },
+   {
+     path: 'rate-plan',
+     component: RatePlanComponent
+   },
+   {
+     path: 'adjustments',
+     component: AdjustmentsComponent
+   },
+   {
+     path: 'markup',
+     component: MarkupComponent
+   },
+   {
+     path: 'inventory-restrictions',
+     component: InventoryRestrictionsComponent
+   },
+   {
+     path: 'inventory-usage',
+     component: InventoryUsageComponent
+   }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: []
+  providers: [  ]
 })
 export class ProdDashboard2RoutingModule { }
