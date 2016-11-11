@@ -17,8 +17,6 @@ export class TopTilesComponent {
 
   constructor(private dashboardService:DashboardService, private datePipe:DatePipe) {
     var dayStr = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
-    dashboardService.getTodaysData(dayStr).subscribe(summary => this.loadTilesData(summary));
-    Observable.interval(10000).subscribe(some => dashboardService.getTodaysData(dayStr).subscribe(summary => this.loadTilesData(summary)));
    }
 
    loadTilesData(summary) {
