@@ -3,8 +3,6 @@ import { DashboardService } from '../shared/dashboard.service';
 import { Observable } from 'rxjs/Rx';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'search-chart',
   templateUrl: './search-chart.component.html',
@@ -18,14 +16,9 @@ export class SearchChartComponent {
 
   constructor(private _dashboardService: DashboardService, private router: Router) {
     _dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary));
-    /** new  **/ Observable.interval(10000).subscribe(some => _dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary)));
   }
 
-
-  public booking_ChartData = [];
-
   public booking_ChartOptions = {
-    // title: 'Bookings',
     titleTextStyle: {
       color: this.textColor
     },
@@ -48,57 +41,6 @@ export class SearchChartComponent {
     colors: ['#2A3F54']
   };
 
-  public search_ChartData = [];
-
-  public search_ChartOptions = {
-    // title: 'Searches',
-    titleTextStyle: {
-      color: this.textColor
-    },
-    legend: {
-      position: 'bottom',
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    hAxis: {
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    vAxis: {
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    colors: ['#1ABB9C']
-  };
-
-  public cancellation_ChartData = [];
-
-  public cancellation_ChartOptions = {
-    // title: 'Cancellations',
-    titleTextStyle: {
-      color: this.textColor
-    },
-    legend: {
-      position: 'bottom',
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    hAxis: {
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    vAxis: {
-      textStyle: {
-        color: this.textColor
-      }
-    },
-    colors: ['#1a8abb']
-  };
 
   public pie_ChartOptions = {
 
