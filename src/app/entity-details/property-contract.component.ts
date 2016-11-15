@@ -84,10 +84,10 @@ export class PropertyContractComponent {
     console.log(data);
     var bar_ChartData_status = [
       ['Status', 'Coherence', 'ATG', 'GC'],
-      ['LIVE', data.cohproperties.LIVE, data.atghproperties.LIVE, data.gcproperties.LIVE],
-      ['SUSPENDED', data.cohproperties.SUSPENDED, data.atghproperties.SUSPENDED, data.gcproperties.SUSPENDED],
-      ['PENDING', data.cohproperties.PENDING, data.atghproperties.PENDING, data.gcproperties.SUSPENDED],
-      ['CANCELLED', data.cohproperties.CANCELLED, data.atghproperties.CANCELLED, data.gcproperties.CANCELLED]
+      ['LIVE', data.cohproperties.LIVE, data.atgproperties.LIVE, data.gcproperties.LIVE],
+      ['SUSPENDED', data.cohproperties.SUSPENDED, data.atgproperties.SUSPENDED, data.gcproperties.SUSPENDED],
+      ['PENDING', data.cohproperties.PENDING, data.atgproperties.PENDING, data.gcproperties.SUSPENDED],
+      ['CANCELLED', data.cohproperties.CANCELLED, data.atgproperties.CANCELLED, data.gcproperties.CANCELLED]
     ];
     this.contractStatus = bar_ChartData_status;
 
@@ -97,12 +97,12 @@ export class PropertyContractComponent {
     console.log(data);
     var bar_ChartData_currency = [
       ['Currency', 'Coherence', 'ATG', 'GC'],
-      ['EUR', data.cohproperties.EUR, data.atghproperties.EUR, data.gcproperties.EUR],
-      ['GBP', data.cohproperties.GBP, data.atghproperties.GBP, data.gcproperties.GBP],
-      ['USD', data.cohproperties.USD, data.atghproperties.USD, data.gcproperties.USD],
-      ['JPY', data.cohproperties.JPY, data.atghproperties.JPY, data.gcproperties.JPY],
-      ['THB', data.cohproperties.THB, data.atghproperties.THB, data.gcproperties.THB],
-      ['OTHERS', data.cohproperties.OTHERS, data.atghproperties.OTHERS, data.gcproperties.OTHERS]
+      ['EUR', data.cohproperties.EUR, data.atgproperties.EUR, data.gcproperties.EUR],
+      ['GBP', data.cohproperties.GBP, data.atgproperties.GBP, data.gcproperties.GBP],
+      ['USD', data.cohproperties.USD, data.atgproperties.USD, data.gcproperties.USD],
+      ['IDR', data.cohproperties.IDR, data.atgproperties.IDR, data.gcproperties.IDR],
+      ['THB', data.cohproperties.THB, data.atgproperties.THB, data.gcproperties.THB],
+      ['Others', data.cohproperties.Others, data.atgproperties.Others, data.gcproperties.Others]
     ];
     this.contractByCurrency = bar_ChartData_currency;
 
@@ -112,8 +112,8 @@ export class PropertyContractComponent {
     console.log(data);
     var bar_ChartData_model = [
       ['Model', 'Coherence', 'ATG', 'GC'],
-      ['MARGIN', data.cohproperties.MARGIN, data.atghproperties.MARGIN, data.gcproperties.MARGIN],
-      ['STATIC', data.cohproperties.STATIC, data.atghproperties.STATIC, data.gcproperties.STATIC]
+      ['MARGIN', data.cohproperties.MARGIN, data.atgproperties.MARGIN, data.gcproperties.MARGIN],
+      ['STATIC', data.cohproperties.STATIC, data.atgproperties.STATIC, data.gcproperties.STATIC]
 
     ];
     this.contractByModel = bar_ChartData_model;
@@ -124,7 +124,7 @@ export class PropertyContractComponent {
   // methods for loading chart options attribute
   loadChartOptionsForStatus() {
     this.bar_ChartOptions_contract_status = JSON.parse(JSON.stringify(this.bar_ChartOptions));
-    this.bar_ChartOptions_contract_status.title = "Number of property contracts having different status";
+    // this.bar_ChartOptions_contract_status.title = "Number of property contracts having different status";
     this.bar_ChartOptions_contract_status.vAxis.title = "Status";
     this.bar_ChartOptions_contract_status.hAxis.title = "Contracts";
     this.bar_ChartOptions_contract_status.height = 400;
@@ -132,7 +132,7 @@ export class PropertyContractComponent {
 
   loadChartOptionsForCurrency() {
     this.bar_ChartOptions_contract_having_currency = JSON.parse(JSON.stringify(this.bar_ChartOptions));
-    this.bar_ChartOptions_contract_having_currency.title = "Top 5 currency with number of Property Contracts having them";
+    // this.bar_ChartOptions_contract_having_currency.title = "Top 5 currency with number of Property Contracts having them";
     this.bar_ChartOptions_contract_having_currency.vAxis.title = "Currency";
     this.bar_ChartOptions_contract_having_currency.hAxis.title = "Contracts";
     this.bar_ChartOptions_contract_having_currency.height = 500;
@@ -140,7 +140,7 @@ export class PropertyContractComponent {
 
   loadChartOptionsForModel() {
     this.bar_ChartOptions_contract_having_model = JSON.parse(JSON.stringify(this.bar_ChartOptions));
-    this.bar_ChartOptions_contract_having_model.title = "Contracts belonging to different models";
+    // this.bar_ChartOptions_contract_having_model.title = "Contracts belonging to different models";
     this.bar_ChartOptions_contract_having_model.vAxis.title = "Model";
     this.bar_ChartOptions_contract_having_model.hAxis.title = "Contracts";
   }

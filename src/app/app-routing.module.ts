@@ -14,43 +14,44 @@ import { SearchChartComponent } from './search-chart/search-chart.component';
 
 const routes: Routes = [{
   path: '',
-  redirectTo: '/pieChart',
+  redirectTo: '/',
   pathMatch: 'full'
-},  {
-      path: 'pieChart',
-      component: SearchChartComponent
-    }, {
-     path: 'property-contract',
-     component: PropertyContractComponent
-   },
-   {
-     path: 'property',
-     component: PropertyComponent
-   },
-   {
-     path: 'rate-plan',
-     component: RatePlanComponent
-   },
-   {
-     path: 'adjustments',
-     component: AdjustmentsComponent
-   },
-   {
-     path: 'markup',
-     component: MarkupComponent
-   },
-   {
-     path: 'inventory-restrictions',
-     component: InventoryRestrictionsComponent
-   },
-   {
-     path: 'inventory-usage',
-     component: InventoryUsageComponent
-   }];
+}, {
+  path: '',
+  component: SearchChartComponent
+}, 
+{
+  path: 'property-contract',
+  component: PropertyContractComponent
+},
+{
+  path: 'property',
+  component: PropertyComponent
+},
+{
+  path: 'rate-plan',
+  component: RatePlanComponent
+},
+{
+  path: 'adjustments',
+  component: AdjustmentsComponent
+},
+{
+  path: 'markup',
+  component: MarkupComponent
+},
+{
+  path: 'inventory-restrictions',
+  component: InventoryRestrictionsComponent
+},
+{
+  path: 'inventory-usage',
+  component: InventoryUsageComponent
+}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [  ]
+  providers: []
 })
 export class ProdDashboard2RoutingModule { }
