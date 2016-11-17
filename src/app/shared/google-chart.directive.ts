@@ -15,6 +15,8 @@ export class GoogleChartDirective implements OnInit, OnChanges {
     @Input('chartData') public chartData: Object;
     changeLog: string[] = [];
 
+    private chartsArray = [];
+
     constructor(public element: ElementRef, private globalVar: GlobalVariableService) {
         this._element = this.element.nativeElement;
     }
@@ -23,23 +25,24 @@ export class GoogleChartDirective implements OnInit, OnChanges {
         if (!this.globalVar.googleLoaded) {
             console.log("google load check")
             this.globalVar.googleLoaded = true;
-            google.charts.load('current', { 'packages': ['corechart', 'gauge'] });
+            this.globalVar.registeredCharts = []
+            google.charts.load('current', { 'packages': ['corechart', 'bar'] });
         } else {
             console.log("google load check")
 
         }
-        setTimeout(() => this.drawGraph(this.chartOptions, this.chartType, this.chartData, this._element), 1000);
+        setTimeout(() => this.drawGraph(this.chartOptions, this.chartType, this.chartData, this._element, this.globalVar), 1000);
     }
 
     ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
         for (let propName in changes) {
             if (propName == 'chartData') {
-                this.redrawGraph();
+                // this.redrawGraph();
             }
         }
     }
 
-    drawGraph(chartOptions, chartType, chartData, ele) {
+    drawGraph(chartOptions, chartType, chartData, ele, globalVar) {
         if (chartData.length > 0)
             google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
@@ -50,12 +53,17 @@ export class GoogleChartDirective implements OnInit, OnChanges {
                 options: chartOptions || {},
                 containerId: ele.id
             });
+            // globalVar.registeredCharts[ele.id] = wrapper;
             wrapper.draw();
         }
-
     }
 
     redrawGraph() {
-        this.drawGraph(this.chartOptions, this.chartType, this.chartData, this._element)
+        /*
+        var chart = this.globalVar.registeredCharts[this._element.id];
+        if(chart) 
+            chart.draw(this.chartData, this.chartOptions);
+            */
+        this.drawGraph(this.chartOptions, this.chartType, this.chartData, this._element, this.globalVar)
     }
 }

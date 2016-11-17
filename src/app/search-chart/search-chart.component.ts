@@ -143,7 +143,7 @@ export class SearchChartComponent {
   getPropertyDetails(): void {
     console.log("into details");
 
-    this.router.navigateByUrl('/property');
+    // this.router.navigateByUrl('/property');
   }
 
   getPropertyContractDetails(): void {
@@ -155,30 +155,30 @@ export class SearchChartComponent {
   getRatePlanDetails(): void {
     console.log("into details");
 
-    this.router.navigateByUrl('/rate-plan');
+    // this.router.navigateByUrl('/rate-plan');
   }
 
   getMarkupDetails(): void {
     console.log("into details");
 
-    this.router.navigateByUrl('/markup');
+    // this.router.navigateByUrl('/markup');
   }
 
   getAdjustmentsDetails(): void {
     console.log("into details");
 
-    this.router.navigateByUrl('/adjustments');
+    // this.router.navigateByUrl('/adjustments');
   }
 
   getInventoryRestrictionsDetails(): void {
     console.log("into details");
 
-    this.router.navigateByUrl('/inventory-restrictions');
+    // this.router.navigateByUrl('/inventory-restrictions');
   }
 
   getInventoryUsageDetails(): void {
     console.log("into details");
 
-    this.router.navigateByUrl('/inventory-usage');
+    // this.router.navigateByUrl('/inventory-usage');
   }
 }

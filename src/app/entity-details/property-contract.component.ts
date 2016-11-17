@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'property-contract',
   templateUrl: '../../app/entity-details/entity-templates/property-contract.component.html',
-  styleUrls: [],
+  styleUrls: ['../../app/entity-details/entity-templates/entity-template.css'],
   providers: [ContractDataService]
 })
 export class PropertyContractComponent {
@@ -15,7 +15,7 @@ export class PropertyContractComponent {
     private location: Location, private _contractDataService: ContractDataService
   ) {
     _contractDataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary));
-  // Observable.interval(10000).subscribe(some => _contractDataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary)));
+    // Observable.interval(10000).subscribe(some => _contractDataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary)));
   }
   goBack(): void {
     this.location.back();
@@ -67,7 +67,7 @@ export class PropertyContractComponent {
 
     this.loadContractStatusData(data[0]);
     this.loadContractByCurrency(data[1]);
-    this.loadContractByModel(data[2]);
+    this.loadContractByModel(data[2]);  
 
   }
 
@@ -114,7 +114,6 @@ export class PropertyContractComponent {
       ['Model', 'Coherence', 'ATG', 'GC'],
       ['MARGIN', data.cohproperties.MARGIN, data.atgproperties.MARGIN, data.gcproperties.MARGIN],
       ['STATIC', data.cohproperties.STATIC, data.atgproperties.STATIC, data.gcproperties.STATIC]
-
     ];
     this.contractByModel = bar_ChartData_model;
 
@@ -144,5 +143,6 @@ export class PropertyContractComponent {
     this.bar_ChartOptions_contract_having_model.vAxis.title = "Model";
     this.bar_ChartOptions_contract_having_model.hAxis.title = "Contracts";
   }
+
 
 }

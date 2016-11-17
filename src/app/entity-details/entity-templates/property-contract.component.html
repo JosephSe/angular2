@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="page-title">
 		<div class="title_left">
-			<h3>Property Contracts details</h3>
+			<h3 class="title-padding">Property Contracts details</h3>
 		</div>
 
 		<div class="title_right">
@@ -28,17 +28,6 @@
 	<div class="col-md-12 col-sm-12 col-xs-12 ">
 		<div class="x_panel tile">
 			<div class="x_title">
-				<h4>Top 5 currencies</h4>
-			</div>
-			<div class="x_content">
-				<div id="bar_chart_contract_by_currency" [chartData]="contractByCurrency" [chartOptions]="bar_ChartOptions_contract_having_currency"
-					chartType="Bar" GoogleChart></div>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-12 col-sm-12 col-xs-12 ">
-		<div class="x_panel tile">
-			<div class="x_title">
 				<h4>Contracts by models</h4>
 			</div>
 			<div class="x_content">
@@ -49,6 +38,17 @@
 		</div>
 	</div>
 
+	<div class="col-md-12 col-sm-12 col-xs-12 ">
+		<div class="x_panel tile">
+			<div class="x_title">
+				<h4>Top 5 currencies</h4>
+			</div>
+			<div class="x_content">
+				<div id="bar_chart_contract_by_currency" [chartData]="contractByCurrency" [chartOptions]="bar_ChartOptions_contract_having_currency"
+					chartType="Bar" GoogleChart></div>
+			</div>
+		</div>
+	</div>
 	<div class="contract_back_button col-md-12 col-sm-12 col-xs-12">
 	</div>
 
