@@ -76,6 +76,7 @@ export class SearchChartComponent {
   public chartData_Markup = [];
   public chartData_InventoryRestrictions = [];
   public chartData_InventoryUsage = [];
+  public chartData_Offer = [];
 
   private loadPieChartData(data) {
     console.log(data);
@@ -100,36 +101,44 @@ export class SearchChartComponent {
       ['Coherence', data[2].systems.Coherence]
     ];
 
-    var pie_chart_data_RatePlan = [
+    var pie_chart_data_Offer = [
       ['System', 'count'],
       ['ATG', data[2].systems.ATG],
       ['GC', data[2].systems.GC],
       ['Coherence', data[2].systems.Coherence]
     ];
 
-    var pie_chart_data_Adjustment = [
+    var pie_chart_data_RatePlan = [
       ['System', 'count'],
+      ['ATG', data[3].systems.ATG],
       ['GC', data[3].systems.GC],
       ['Coherence', data[3].systems.Coherence]
     ];
 
-    var pie_chart_data_Markup = [
+    var pie_chart_data_Adjustment = [
       ['System', 'count'],
       ['GC', data[4].systems.GC],
       ['Coherence', data[4].systems.Coherence]
     ];
 
-    var pie_chart_data_InventoryRestrictions = [
+    var pie_chart_data_Markup = [
       ['System', 'count'],
       ['GC', data[5].systems.GC],
       ['Coherence', data[5].systems.Coherence]
     ];
 
-    var pie_chart_data_InventoryUsage = [
+    var pie_chart_data_InventoryRestrictions = [
       ['System', 'count'],
       ['GC', data[6].systems.GC],
       ['Coherence', data[6].systems.Coherence]
     ];
+
+    var pie_chart_data_InventoryUsage = [
+      ['System', 'count'],
+      ['GC', data[7].systems.GC],
+      ['Coherence', data[7].systems.Coherence]
+    ];
+
 
     this.chartData_Property = pie_chart_data_Property;
     this.chartData_PropertyContract = pie_chart_data_PropertyContract;
@@ -138,6 +147,7 @@ export class SearchChartComponent {
     this.chartData_Markup = pie_chart_data_Markup;
     this.chartData_InventoryRestrictions = pie_chart_data_InventoryRestrictions;
     this.chartData_InventoryUsage = pie_chart_data_InventoryUsage;
+    this.chartData_Offer = pie_chart_data_Offer;
 
   }
   getPropertyDetails(): void {
@@ -180,5 +190,11 @@ export class SearchChartComponent {
     console.log("into details");
 
     // this.router.navigateByUrl('/inventory-usage');
+  }
+
+  getOfferDetails(): void {
+    console.log("into details");
+
+    // this.router.navigateByUrl('/offer');
   }
 }
