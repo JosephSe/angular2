@@ -6,6 +6,6 @@
 export const environment = {
   production: false,
 //  serverURL : "http://10.241.120.74:9000"
-  serverURL : "http://localhost:9000"
-  // serverURL : "http://10.241.169.208:9000"
+  // serverURL : "http://localhost:9000"
+  serverURL : "http://10.241.169.208:9000"
 };
