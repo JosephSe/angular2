@@ -97,8 +97,8 @@ export class SearchChartComponent {
     var pie_chart_data_RatePlan = [
       ['System', 'count'],
       ['ATG', data[2].systems.ATG],
-      ['GC', data[2].systems.GC],
-      ['Coherence', data[2].systems.Coherence]
+      ['GC', data[2].systems.GC]
+      // ['Coherence', data[2].systems.Coherence]
     ];
 
     var pie_chart_data_Offer = [
@@ -111,8 +111,8 @@ export class SearchChartComponent {
     var pie_chart_data_RatePlan = [
       ['System', 'count'],
       ['ATG', data[3].systems.ATG],
-      ['GC', data[3].systems.GC],
-      ['Coherence', data[3].systems.Coherence]
+      ['GC', data[3].systems.GC]
+      // ['Coherence', data[3].systems.Coherence]
     ];
 
     var pie_chart_data_Adjustment = [
