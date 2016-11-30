@@ -153,7 +153,7 @@ export class SearchChartComponent {
   getPropertyDetails(): void {
     console.log("into details");
 
-    // this.router.navigateByUrl('/property');
+     this.router.navigateByUrl('/property');
   }
 
   getPropertyContractDetails(): void {

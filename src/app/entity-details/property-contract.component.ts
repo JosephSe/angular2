@@ -1,21 +1,21 @@
 import { Component, AfterViewInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
-import { ContractDataService } from './entity-services/contract-data.service';
+import { DataService } from './entity-services/data.service';
 import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'property-contract',
   templateUrl: '../../app/entity-details/entity-templates/property-contract.component.html',
   styleUrls: ['../../app/entity-details/entity-templates/entity-template.css'],
-  providers: [ContractDataService]
+  providers: [DataService]
 })
 export class PropertyContractComponent {
 
   constructor(
-    private location: Location, private _contractDataService: ContractDataService
+    private location: Location, private _dataService: DataService
   ) {
-    _contractDataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary));
-    // Observable.interval(10000).subscribe(some => _contractDataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary)));
+    _dataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary));
+    // Observable.interval(10000).subscribe(some => _dataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary)));
   }
   goBack(): void {
     this.location.back();
@@ -67,7 +67,7 @@ export class PropertyContractComponent {
 
     this.loadContractStatusData(data[0]);
     this.loadContractByCurrency(data[1]);
-    this.loadContractByModel(data[2]);  
+    this.loadContractByModel(data[2]);
 
   }
 
