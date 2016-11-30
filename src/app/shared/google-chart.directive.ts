@@ -29,7 +29,6 @@ export class GoogleChartDirective implements OnInit, OnChanges {
             google.charts.load('current', { 'packages': ['corechart', 'bar'] });
         } else {
             console.log("google load check")
-
         }
         setTimeout(() => this.drawGraph(this.chartOptions, this.chartType, this.chartData, this._element, this.globalVar), 1000);
     }
