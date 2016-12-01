@@ -135,8 +135,8 @@ export class SearchChartComponent {
 
     var pie_chart_data_RoomRate = [
       ['System', 'count'],
-      ['GC', data[7].systems.GC],
-      ['Coherence', data[7].systems.Coherence]
+      ['GC', data[8].systems.GC],
+      ['Coherence', data[8].systems.Coherence]
     ];
 
 
