@@ -19,6 +19,12 @@ var  dataUrl = environment.serverURL + "/dashboard/entity/details/property";
 return this._http.get(dataUrl).map(res => res.json());
 }
 
+getOfferData(){
+   console.log("into this get data...");
+var  dataUrl = environment.serverURL + "/dashboard/entity/details/offer";
+return this._http.get(dataUrl).map(res => res.json());
+}
+
 
 /*new implementation ends*/
 

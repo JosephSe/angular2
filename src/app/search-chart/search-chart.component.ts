@@ -165,6 +165,11 @@ export class SearchChartComponent {
     this.router.navigateByUrl('/property-contract');
   }
 
+  getOfferDetails(): void {
+    console.log("into details");
+    this.router.navigateByUrl('/offer');
+  }
+
   getRatePlanDetails(): void {
     console.log("into details");
 
@@ -195,11 +200,6 @@ export class SearchChartComponent {
     // this.router.navigateByUrl('/inventory-usage');
   }
 
-  getOfferDetails(): void {
-    console.log("into details");
-
-    // this.router.navigateByUrl('/offer');
-  }
 
   getRoomRateDetails(): void {
     console.log("into details");

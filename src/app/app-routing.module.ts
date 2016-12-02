@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PropertyContractComponent } from './entity-details/property-contract.component';
 
 import { PropertyComponent } from './entity-details/property.component';
+import { OfferComponent } from './entity-details/offer.component';
 import { RatePlanComponent } from './entity-details/rate-plan.component';
 import { AdjustmentsComponent } from './entity-details/adjustments.component';
 import { MarkupComponent } from './entity-details/markup.component';

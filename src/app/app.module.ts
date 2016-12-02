@@ -15,6 +15,7 @@ import { TopNavComponent } from './top-nav/top-nav.component';
 import { PropertyContractComponent } from './entity-details/property-contract.component';
 import { Routes, RouterModule } from '@angular/router';
 import { PropertyComponent } from './entity-details/property.component';
+import { OfferComponent } from './entity-details/offer.component';
 import { RatePlanComponent } from './entity-details/rate-plan.component';
 import { AdjustmentsComponent } from './entity-details/adjustments.component';
 import { MarkupComponent } from './entity-details/markup.component';
