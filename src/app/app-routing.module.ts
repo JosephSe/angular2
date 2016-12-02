@@ -20,7 +20,7 @@ const routes: Routes = [{
 }, {
   path: '',
   component: SearchChartComponent
-}, 
+},
 {
   path: 'property-contract',
   component: PropertyContractComponent
@@ -48,6 +48,10 @@ const routes: Routes = [{
 {
   path: 'inventory-usage',
   component: InventoryUsageComponent
+},
+{
+  path: 'offer',
+  component: OfferComponent
 }];
 
 @NgModule({

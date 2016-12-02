@@ -40,8 +40,8 @@ import { ProdDashboard2RoutingModule } from './app-routing.module';
     TopClientsComponent,
     ChartDirective,
     GoogleChartDirective,
-    TopNavComponent
-
+    TopNavComponent,
+    OfferComponent
   ],
   imports : [
     BrowserModule,
