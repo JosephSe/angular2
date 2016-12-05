@@ -50,7 +50,7 @@ export class PropertyContractComponent {
         color: '#848484'
       }
     },
-    bars: 'horizontal'
+    bars: 'vertical'
   };
 
   public contractStatus = [];
@@ -126,7 +126,7 @@ export class PropertyContractComponent {
     // this.bar_ChartOptions_contract_status.title = "Number of property contracts having different status";
     this.bar_ChartOptions_contract_status.vAxis.title = "Status";
     this.bar_ChartOptions_contract_status.hAxis.title = "Contracts";
-    this.bar_ChartOptions_contract_status.height = 400;
+    // this.bar_ChartOptions_contract_status.height = 400;
   }
 
   loadChartOptionsForCurrency() {
@@ -134,7 +134,7 @@ export class PropertyContractComponent {
     // this.bar_ChartOptions_contract_having_currency.title = "Top 5 currency with number of Property Contracts having them";
     this.bar_ChartOptions_contract_having_currency.vAxis.title = "Currency";
     this.bar_ChartOptions_contract_having_currency.hAxis.title = "Contracts";
-    this.bar_ChartOptions_contract_having_currency.height = 500;
+    // this.bar_ChartOptions_contract_having_currency.height = 500;
   }
 
   loadChartOptionsForModel() {

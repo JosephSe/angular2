@@ -2,7 +2,7 @@
 	<div class="col-md-4">
 		<div class="x_panel tile">
 			<div (click)="getPropertyDetails()" class="x_title" style="cursor:pointer">
-				<h4> Property</h4>
+				<h4> Property<span class="navbar-right fa fa-bar-chart fa-blue"></span></h4>
 			</div>
 			<div class="x_content">
 				<div id="pie_chart_Property" [chartData]="chartData_Property" [chartOptions]="pie_ChartOptions" chartType="Bar" GoogleChart></div>
@@ -13,7 +13,7 @@
 	<div class="col-md-4">
 		<div class="x_panel tile">
 			<div (click)="getPropertyContractDetails()" class="x_title" style="cursor:pointer">
-				<h4>Property Contract</h4>
+				<h4>Property Contract<span class="navbar-right fa fa-bar-chart fa-blue"></span></h4>
 			</div>
 			<div class="x_content">
 				<div id="pie_chart_PropertyContract" [chartData]="chartData_PropertyContract" [chartOptions]="pie_ChartOptions" chartType="Bar"
@@ -25,7 +25,7 @@
 	<div class="col-md-4">
 		<div class="x_panel tile">
 			<div (click)="getOfferDetails()" class="col-md-12 x_title" style="cursor:pointer">
-				<h4>Offer</h4>
+				<h4>Offer<span class="navbar-right fa fa-bar-chart fa-blue"></span></h4>
 			</div>
 			<div class="col-md-12 x_content">
 				<div id="pie_chart_Offer" [chartData]="chartData_Offer" [chartOptions]="pie_ChartOptions" chartType="Bar" GoogleChart></div>

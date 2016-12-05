@@ -1,43 +1,37 @@
 <div class="row">
 	<div class="page-title">
 		<div class="title_left">
-			<h3 class="title-padding">Property Contracts details</h3>
+			<h4 class="title-padding">Property contract details</h4>
 		</div>
-
 		<div class="title_right">
-			<div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-				<div class="input-group">
-				<button type="button" class="btn btn-primary navbar-right" (click)="goBack()">Back</button>
+			<button type="button" class="btn btn-primary navbar-right" (click)="goBack()"><i class="fa fa-arrow-left"></i> Back</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-sm-12 col-xs-12">
+			<div class="x_panel tile">
+				<div class="x_title">
+					<h4>By status</h4>
+				</div>
+				<div class="x_content">
+					<div id="bar_chart_contract_status" [chartData]="contractStatus" [chartOptions]="bar_ChartOptions_contract_status" chartType="Bar"
+						GoogleChart></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12 col-xs-12 ">
+			<div class="x_panel tile">
+				<div class="x_title">
+					<h4>By models</h4>
+				</div>
+				<div class="x_content">
+					<div id="bar_chart_contract_by_model" [chartData]="contractByModel" [chartOptions]="bar_ChartOptions_contract_having_model"
+						chartType="Bar" GoogleChart></div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<div class="col-md-12 col-sm-12 col-xs-12">
-		<div class="x_panel tile">
-			<div class="x_title">
-				<h4>Number of contracts per status</h4>
-			</div>
-			<div class="x_content">
-				<div id="bar_chart_contract_status" [chartData]="contractStatus" [chartOptions]="bar_ChartOptions_contract_status" chartType="Bar"
-					GoogleChart></div>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-md-12 col-sm-12 col-xs-12 ">
-		<div class="x_panel tile">
-			<div class="x_title">
-				<h4>Contracts by models</h4>
-			</div>
-			<div class="x_content">
-				<div id="bar_chart_contract_by_model" [chartData]="contractByModel" [chartOptions]="bar_ChartOptions_contract_having_model"
-					chartType="Bar" GoogleChart></div>
-			</div>
-
-		</div>
-	</div>
-
 	<div class="col-md-12 col-sm-12 col-xs-12 ">
 		<div class="x_panel tile">
 			<div class="x_title">
@@ -49,7 +43,4 @@
 			</div>
 		</div>
 	</div>
-	<div class="contract_back_button col-md-12 col-sm-12 col-xs-12">
-	</div>
-
 </div>
