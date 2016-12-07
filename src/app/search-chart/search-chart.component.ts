@@ -67,7 +67,6 @@ export class SearchChartComponent {
     height: 200
   };
 
-
   /** to load data for pie charts **/
   public chartData_Property = [];
   public chartData_PropertyContract = [];
@@ -78,6 +77,7 @@ export class SearchChartComponent {
   public chartData_InventoryUsage = [];
   public chartData_Offer = [];
   public chartData_RoomRate = [];
+  public chartData_RateRule = [];
 
   private loadPieChartData(data) {
     console.log(data);
@@ -140,7 +140,11 @@ export class SearchChartComponent {
     ];
 
 
-
+    var pie_chart_data_RateRule = [
+      ['System', 'Static', 'Margin'],
+      ['GC', data[9].systems.GC, data[10].systems.GC],
+      ['Coherence', data[9].systems.Coherence, data[10].systems.Coherence]
+    ];
 
     this.chartData_Property = pie_chart_data_Property;
     this.chartData_PropertyContract = pie_chart_data_PropertyContract;
@@ -151,6 +155,7 @@ export class SearchChartComponent {
     this.chartData_InventoryUsage = pie_chart_data_InventoryUsage;
     this.chartData_Offer = pie_chart_data_Offer;
     this.chartData_RoomRate = pie_chart_data_RoomRate;
+    this.chartData_RateRule = pie_chart_data_RateRule;
 
   }
   getPropertyDetails(): void {
@@ -205,5 +210,11 @@ export class SearchChartComponent {
     console.log("into details");
 
     // this.router.navigateByUrl('/room-rate');
+  }
+
+  getRateRuleDetails(): void {
+    console.log("into details");
+
+    // this.router.navigateByUrl('/rate-rule');
   }
 }

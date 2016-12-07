@@ -104,4 +104,18 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="col-md-4">
+		<div class="x_panel tile">
+
+			<div (click)="getRateRuleDetails()" class="col-md-12 x_title">
+				<h4>RateRule</h4>
+			</div>
+			<div class="col-md-12 x_content">
+				<div id="pie_chart_RateRule" [chartData]="chartData_RateRule" [chartOptions]="pie_ChartOptions" chartType="Bar"
+					GoogleChart></div>
+			</div>
+		</div>
+	</div>
+
 </div>
