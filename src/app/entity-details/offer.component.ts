@@ -2,6 +2,7 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { DataService } from './entity-services/data.service';
 import { Observable } from 'rxjs/Rx';
+import { GlobalVariableService } from "../shared/global-variable.service";
 
 @Component({
   selector: 'offer',
@@ -11,10 +12,13 @@ import { Observable } from 'rxjs/Rx';
 })
 export class OfferComponent {
 
-  constructor(
-    private location: Location, private _dataService: DataService
-  ) {
-    _dataService.getOfferData().subscribe(summary => this.loadOfferData(summary));
+  constructor(private location: Location, private _dataService: DataService, private globalVar: GlobalVariableService) {
+    var data = globalVar.getOfferData();
+    if(data) {
+      this.loadOfferData(data);
+    } else {
+      _dataService.getOfferData().subscribe(summary => this.loadOfferData(summary));
+    }
   }
   goBack(): void {
     this.location.back();
@@ -32,7 +36,7 @@ export class OfferComponent {
   public bar_ChartOptions_offer_code;
 
   loadOfferData(data) {
-    console.log("into loadOfferData");
+    this.globalVar.setOfferData(data);
     this.loadOfferDetailsChartOptions();
 
     this.loadOfferCodeData(data[0]);
@@ -48,7 +52,6 @@ export class OfferComponent {
 
   // methods for loading chart data attribute
   loadOfferCodeData(data) {
-    console.log(data);
     var bar_ChartData_offer_code = [
       ['Offer Code', 'Coherence', 'ATG', 'GC'],
       ['EARLY_BIRD', data.cohproperties.EARLY_BIRD, data.atgproperties.EARLY_BIRD, data.gcproperties.EARLY_BIRD],

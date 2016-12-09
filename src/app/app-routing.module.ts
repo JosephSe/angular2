@@ -12,7 +12,6 @@ import { InventoryUsageComponent } from './entity-details/inventory-usage.compon
 import { InventoryRestrictionsComponent } from './entity-details/inventory-restrictions.component';
 import { SearchChartComponent } from './search-chart/search-chart.component';
 
-
 const routes: Routes = [{
   path: '',
   redirectTo: '/',

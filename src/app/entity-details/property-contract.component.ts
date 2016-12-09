@@ -2,6 +2,7 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { DataService } from './entity-services/data.service';
 import { Observable } from 'rxjs/Rx';
+import { GlobalVariableService } from "../shared/global-variable.service";
 
 @Component({
   selector: 'property-contract',
@@ -11,10 +12,13 @@ import { Observable } from 'rxjs/Rx';
 })
 export class PropertyContractComponent {
 
-  constructor(
-    private location: Location, private _dataService: DataService
-  ) {
-    _dataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary));
+  constructor(private location: Location, private _dataService: DataService, private globalVar: GlobalVariableService) {
+    var data = globalVar.getPropertyContractData();
+    if(data) {
+      this.loadPropertyContractData(data);
+    } else {
+      _dataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary));
+    }
     // Observable.interval(10000).subscribe(some => _dataService.getContractData().subscribe(summary => this.loadPropertyContractData(summary)));
   }
   goBack(): void {
@@ -62,26 +66,21 @@ export class PropertyContractComponent {
   public bar_ChartOptions_contract_having_model;
 
   loadPropertyContractData(data) {
-    console.log("into loadPropertyContractData");
+    this.globalVar.setPropertyContractData(data);
     this.loadContractChartOptions();
-
     this.loadContractStatusData(data[0]);
     this.loadContractByCurrency(data[1]);
     this.loadContractByModel(data[2]);
-
   }
 
   loadContractChartOptions() {
-
     this.loadChartOptionsForStatus();
     this.loadChartOptionsForCurrency();
     this.loadChartOptionsForModel();
-
   }
 
   // methods for loading chart data attribute
   loadContractStatusData(data) {
-    console.log(data);
     var bar_ChartData_status = [
       ['Status', 'Coherence', 'ATG', 'GC'],
       ['LIVE', data.cohproperties.LIVE, data.atgproperties.LIVE, data.gcproperties.LIVE],
@@ -90,11 +89,9 @@ export class PropertyContractComponent {
       ['CANCELLED', data.cohproperties.CANCELLED, data.atgproperties.CANCELLED, data.gcproperties.CANCELLED]
     ];
     this.contractStatus = bar_ChartData_status;
-
   }
 
   loadContractByCurrency(data) {
-    console.log(data);
     var bar_ChartData_currency = [
       ['Currency', 'Coherence', 'ATG', 'GC'],
       ['EUR', data.cohproperties.EUR, data.atgproperties.EUR, data.gcproperties.EUR],
@@ -105,19 +102,15 @@ export class PropertyContractComponent {
       ['Others', data.cohproperties.Others, data.atgproperties.Others, data.gcproperties.Others]
     ];
     this.contractByCurrency = bar_ChartData_currency;
-
   }
 
   loadContractByModel(data) {
-    console.log(data);
     var bar_ChartData_model = [
       ['Model', 'Coherence', 'ATG', 'GC'],
       ['MARGIN', data.cohproperties.MARGIN, data.atgproperties.MARGIN, data.gcproperties.MARGIN],
       ['STATIC', data.cohproperties.STATIC, data.atgproperties.STATIC, data.gcproperties.STATIC]
     ];
     this.contractByModel = bar_ChartData_model;
-
-
   }
 
   // methods for loading chart options attribute

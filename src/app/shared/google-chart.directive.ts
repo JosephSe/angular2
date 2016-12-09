@@ -1,11 +1,11 @@
 //import { Directive } from '@angular/core';
-import { Directive, ElementRef, Input, OnInit, OnChanges, SimpleChange } from '@angular/core';
+import { Directive, ElementRef, Input, Output, OnInit, OnChanges, SimpleChange, EventEmitter } from '@angular/core';
 import { GlobalVariableService } from "./global-variable.service";
 
 declare var google: any;
 @Directive({
     selector: '[GoogleChart]',
-    providers: [GlobalVariableService]
+    providers: []
 })
 
 export class GoogleChartDirective implements OnInit, OnChanges {
@@ -13,6 +13,8 @@ export class GoogleChartDirective implements OnInit, OnChanges {
     @Input('chartType') public chartType: string;
     @Input('chartOptions') public chartOptions: Object;
     @Input('chartData') public chartData: Object;
+    @Output() loaded = new EventEmitter();
+
     changeLog: string[] = [];
 
     private chartsArray = [];
@@ -21,16 +23,14 @@ export class GoogleChartDirective implements OnInit, OnChanges {
         this._element = this.element.nativeElement;
     }
     ngOnInit() {
-        console.log("google load check")
-        if (!this.globalVar.googleLoaded) {
-            console.log("google load check")
-            this.globalVar.googleLoaded = true;
-            this.globalVar.registeredCharts = []
+        if (!this.globalVar.getGoogleChartStatus()) {
+            console.log("google chart check : Loading")
+            this.globalVar.setGoogleChartStatus(true);
+            // this.globalVar.registeredCharts = []
             google.charts.load('current', { 'packages': ['corechart', 'bar'] });
         } else {
-            console.log("google load check")
         }
-        setTimeout(() => this.drawGraph(this.chartOptions, this.chartType, this.chartData, this._element, this.globalVar), 1000);
+        setTimeout(() => this.drawGraph(this.chartOptions, this.chartType, this.chartData, this._element, this.loaded), 1000);
     }
 
     ngOnChanges(changes: { [propKey: string]: SimpleChange }) {
@@ -41,9 +41,12 @@ export class GoogleChartDirective implements OnInit, OnChanges {
         }
     }
 
-    drawGraph(chartOptions, chartType, chartData, ele, globalVar) {
-        if (chartData.length > 0)
+    drawGraph(chartOptions, chartType, chartData, ele, loaded) {
+        if (chartData.length > 0) {
             google.charts.setOnLoadCallback(drawChart);
+        } else {
+            this.loaded.emit(true);
+        }
         function drawChart() {
             var wrapper;
             wrapper = new google.visualization.ChartWrapper({
@@ -54,6 +57,7 @@ export class GoogleChartDirective implements OnInit, OnChanges {
             });
             // globalVar.registeredCharts[ele.id] = wrapper;
             wrapper.draw();
+            loaded.emit(true);
         }
     }
 

@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, Input } from '@angular/core';
 import { DashboardService } from '../shared/dashboard.service';
+import { GlobalVariableService } from "../shared/global-variable.service";
 import { Observable } from 'rxjs/Rx';
 import { Router } from '@angular/router';
 
@@ -14,8 +15,23 @@ export class SearchChartComponent {
 
   textColor = '#73879C'
 
-  constructor(private _dashboardService: DashboardService, private router: Router) {
-    _dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary));
+  public propertyLoaded = false;
+
+  constructor(private _dashboardService: DashboardService, private router: Router, private globalVar: GlobalVariableService) {
+    var data = globalVar.getDashboardCountData();
+    if(data) {
+      this.loadPieChartData(data);
+    } else {  
+      _dashboardService.getPieChartData().subscribe(summary => this.loadPieChartData(summary));
+    }
+  }
+
+  chartLoaded(chartType) {
+    if(chartType == 'property') {
+      this.propertyLoaded = true
+    // } else if(chartType == 'byProvision') {
+      // this.byProvisionLoaded = true;
+    }
   }
 
   public booking_ChartOptions = {
@@ -80,6 +96,7 @@ export class SearchChartComponent {
   public chartData_RateRule = [];
 
   private loadPieChartData(data) {
+    this.globalVar.setDashboardCountData(data);
     console.log(data);
     var pie_chart_data_Property = [
       ['System', 'count'],
@@ -139,13 +156,12 @@ export class SearchChartComponent {
       ['Coherence', data[8].systems.Coherence]
     ];
 
-
-    var pie_chart_data_RateRule = [
+/*    var pie_chart_data_RateRule = [
       ['System', 'Static', 'Margin'],
       ['GC', data[9].systems.GC, data[10].systems.GC],
       ['Coherence', data[9].systems.Coherence, data[10].systems.Coherence]
     ];
-
+*/
     this.chartData_Property = pie_chart_data_Property;
     this.chartData_PropertyContract = pie_chart_data_PropertyContract;
     this.chartData_RatePlan = pie_chart_data_RatePlan;
@@ -155,66 +171,47 @@ export class SearchChartComponent {
     this.chartData_InventoryUsage = pie_chart_data_InventoryUsage;
     this.chartData_Offer = pie_chart_data_Offer;
     this.chartData_RoomRate = pie_chart_data_RoomRate;
-    this.chartData_RateRule = pie_chart_data_RateRule;
+    // this.chartData_RateRule = pie_chart_data_RateRule;
 
   }
   getPropertyDetails(): void {
-    console.log("into details");
-
      this.router.navigateByUrl('/property');
   }
 
   getPropertyContractDetails(): void {
-    console.log("into details");
-
     this.router.navigateByUrl('/property-contract');
   }
 
   getOfferDetails(): void {
-    console.log("into details");
     this.router.navigateByUrl('/offer');
   }
 
   getRatePlanDetails(): void {
-    console.log("into details");
-
     // this.router.navigateByUrl('/rate-plan');
   }
 
   getMarkupDetails(): void {
-    console.log("into details");
-
     // this.router.navigateByUrl('/markup');
   }
 
   getAdjustmentsDetails(): void {
-    console.log("into details");
-
     // this.router.navigateByUrl('/adjustments');
   }
 
   getInventoryRestrictionsDetails(): void {
-    console.log("into details");
-
     // this.router.navigateByUrl('/inventory-restrictions');
   }
 
   getInventoryUsageDetails(): void {
-    console.log("into details");
-
     // this.router.navigateByUrl('/inventory-usage');
   }
 
 
   getRoomRateDetails(): void {
-    console.log("into details");
-
     // this.router.navigateByUrl('/room-rate');
   }
 
   getRateRuleDetails(): void {
-    console.log("into details");
-
     // this.router.navigateByUrl('/rate-rule');
   }
 }

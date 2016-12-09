@@ -2,6 +2,7 @@ import { Component, AfterViewInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { DataService } from './entity-services/data.service';
 import { Observable } from 'rxjs/Rx';
+import { GlobalVariableService } from "../shared/global-variable.service";
 
 @Component({
   selector: 'property',
@@ -11,10 +12,13 @@ import { Observable } from 'rxjs/Rx';
 })
 export class PropertyComponent {
 
-  constructor(
-    private location: Location, private _dataService: DataService
-  ) {
+  constructor(private location: Location, private _dataService: DataService, private globalVar: GlobalVariableService) {
+    var data = globalVar.getPropertyData();
+    if(data) {
+      this.loadPropertyData(data);
+    }else {
     _dataService.getPropertyData().subscribe(summary => this.loadPropertyData(summary));
+    }
   }
   goBack(): void {
     this.location.back();
@@ -22,6 +26,10 @@ export class PropertyComponent {
 
   public bar_ChartOptions = {
   };
+
+  public byTypeLoaded = false;
+  public byProvisionLoaded = false;
+  public byCategoryLoaded = false;
 
   public propertyByTypes = [];
   public propertyByCategories = [];
@@ -31,14 +39,24 @@ export class PropertyComponent {
   public bar_ChartOptions_property_categories;
   public bar_ChartOptions_property_prov_types;
 
+  chartLoaded(chartType) {
+    if(chartType == 'byType') {
+      this.byTypeLoaded = true
+    } else if(chartType == 'byProvision') {
+      this.byProvisionLoaded = true;
+    }else if(chartType == 'byCategory') {
+      this.byCategoryLoaded = true;
+    } 
+  }
+
   loadPropertyData(data) {
+    this.globalVar.setPropertyData(data);
     console.log("into loadPropertyData");
     this.loadPropertyDetailsChartOptions();
 
     this.loadPropTypeData(data[0]);
     this.loadPropertyByCategory(data[1]);
     this.loadPropertyByProvType(data[2]);
-
   }
 
   loadPropertyDetailsChartOptions() {
@@ -49,14 +67,12 @@ export class PropertyComponent {
 
   // methods for loading chart data attribute
   loadPropTypeData(data) {
-    console.log(data);
     var bar_ChartData_prop_type = [
       ['Property Type', 'ATG', 'GC'],
       ['HOTEL', data.atgproperties.HOTEL, data.gcproperties.HOTEL],
       ['APARTMENT', data.atgproperties.APARTMENT, data.gcproperties.APARTMENT],
     ];
     this.propertyByTypes = bar_ChartData_prop_type;
-
   }
 
   loadPropertyByCategory(data) {

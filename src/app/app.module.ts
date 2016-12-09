@@ -22,7 +22,7 @@ import { MarkupComponent } from './entity-details/markup.component';
 import { InventoryUsageComponent } from './entity-details/inventory-usage.component';
 import { InventoryRestrictionsComponent } from './entity-details/inventory-restrictions.component';
 import { ProdDashboard2RoutingModule } from './app-routing.module';
-
+import { GlobalVariableService } from "./shared/global-variable.service";
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import { ProdDashboard2RoutingModule } from './app-routing.module';
     ProdDashboard2RoutingModule
 
   ],
-  providers: [],
+  providers: [GlobalVariableService],
   bootstrap: [AppComponent],
   exports: [RouterModule]
 })

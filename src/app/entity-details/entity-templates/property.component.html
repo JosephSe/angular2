@@ -7,7 +7,7 @@
 			<button type="button" class="btn btn-primary navbar-right" (click)="goBack()"><i class="fa fa-arrow-left"></i> Back</button>
 		</div>
 	</div>
-	
+
 	<div class="row">
 		<div class="col-md-6 col-sm-12 col-xs-12 ">
 			<div class="x_panel tile">
@@ -16,7 +16,13 @@
 				</div>
 				<div class="x_content">
 					<div id="bar_chart_propety_type" [chartData]="propertyByTypes" [chartOptions]="bar_ChartOptions_property_type" chartType="Bar"
-						GoogleChart></div>
+						(loaded)="chartLoaded('byType')" GoogleChart></div>
+					<div class="pricing_footer no_bg_border" *ngIf="!byTypeLoaded">
+						<p>
+							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -28,7 +34,13 @@
 				</div>
 				<div class="x_content">
 					<div id="bar_chart_property_provision" [chartData]="propertyByProvTypes" [chartOptions]="bar_ChartOptions_property_prov_types"
-						chartType="Bar" GoogleChart></div>
+						chartType="Bar" (loaded)="chartLoaded('byProvision')" GoogleChart></div>
+					<div class="pricing_footer no_bg_border" *ngIf="!byProvisionLoaded">
+						<p>
+							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -41,7 +53,13 @@
 			</div>
 			<div class="x_content">
 				<div id="bar_chart_property_category" [chartData]="propertyByCategories" [chartOptions]="bar_ChartOptions_property_categories"
-					chartType="Bar" GoogleChart></div>
+					chartType="Bar" (loaded)="chartLoaded('byCategory')" GoogleChart></div>
+					<div class="pricing_footer no_bg_border" *ngIf="!byCategoryLoaded">
+						<p>
+							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</p>
+					</div>
 			</div>
 
 		</div>
