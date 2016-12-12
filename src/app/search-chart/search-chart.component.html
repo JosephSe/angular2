@@ -5,7 +5,14 @@
 				<h4> Property<span class="navbar-right fa fa-bar-chart fa-blue"></span></h4>
 			</div>
 			<div class="x_content">
-				<div id="pie_chart_Property" [chartData]="chartData_Property" [chartOptions]="pie_ChartOptions" chartType="Bar" GoogleChart></div>
+				<div id="pie_chart_Property" [chartData]="chartData_Property" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
+					GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -17,7 +24,13 @@
 			</div>
 			<div class="x_content">
 				<div id="pie_chart_PropertyContract" [chartData]="chartData_PropertyContract" [chartOptions]="pie_ChartOptions" chartType="Bar"
-					GoogleChart></div>
+					(loaded)="chartLoaded('data')" GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -28,7 +41,14 @@
 				<h4>Offer<span class="navbar-right fa fa-bar-chart fa-blue"></span></h4>
 			</div>
 			<div class="col-md-12 x_content">
-				<div id="pie_chart_Offer" [chartData]="chartData_Offer" [chartOptions]="pie_ChartOptions" chartType="Bar" GoogleChart></div>
+				<div id="pie_chart_Offer" [chartData]="chartData_Offer" [chartOptions]="pie_ChartOptions" chartType="Bar" 
+					(loaded)="chartLoaded('data')" GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -39,7 +59,14 @@
 				<h4>RatePlan</h4>
 			</div>
 			<div class="col-md-12 x_content">
-				<div id="pie_chart_RatePlan" [chartData]="chartData_RatePlan" [chartOptions]="pie_ChartOptions" chartType="Bar" GoogleChart></div>
+				<div id="pie_chart_RatePlan" [chartData]="chartData_RatePlan" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
+					GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -50,7 +77,14 @@
 				<h4>Adjustment</h4>
 			</div>
 			<div class="col-md-12 x_content">
-				<div id="pie_chart_Adjustment" [chartData]="chartData_Adjustment" [chartOptions]="pie_ChartOptions" chartType="Bar" GoogleChart></div>
+				<div id="pie_chart_Adjustment" [chartData]="chartData_Adjustment" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
+					GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -62,7 +96,14 @@
 				<h4>Markup</h4>
 			</div>
 			<div class="col-md-12 x_content">
-				<div id="pie_chart_Markup" [chartData]="chartData_Markup" [chartOptions]="pie_ChartOptions" chartType="Bar" GoogleChart></div>
+				<div id="pie_chart_Markup" [chartData]="chartData_Markup" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
+					GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 
@@ -74,7 +115,13 @@
 			</div>
 			<div class="col-md-12 x_content">
 				<div id="pie_chart_InventoryRestrictions" [chartData]="chartData_InventoryRestrictions" [chartOptions]="pie_ChartOptions"
-					chartType="Bar" GoogleChart></div>
+					chartType="Bar" (loaded)="chartLoaded('data')" GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -87,7 +134,13 @@
 			</div>
 			<div class="col-md-12 x_content">
 				<div id="pie_chart_InventoryUsage" [chartData]="chartData_InventoryUsage" [chartOptions]="pie_ChartOptions" chartType="Bar"
-					GoogleChart></div>
+					(loaded)="chartLoaded('data')" GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -99,8 +152,14 @@
 				<h4>RoomRate</h4>
 			</div>
 			<div class="col-md-12 x_content">
-				<div id="pie_chart_RoomRate" [chartData]="chartData_RoomRate" [chartOptions]="pie_ChartOptions" chartType="Bar"
+				<div id="pie_chart_RoomRate" [chartData]="chartData_RoomRate" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
 					GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -112,8 +171,14 @@
 				<h4>RateRule</h4>
 			</div>
 			<div class="col-md-12 x_content">
-				<div id="pie_chart_RateRule" [chartData]="chartData_RateRule" [chartOptions]="pie_ChartOptions" chartType="Bar"
+				<div id="pie_chart_RateRule" [chartData]="chartData_RateRule" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
 					GoogleChart></div>
+				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+					<p>
+						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+						<span class="sr-only">Loading...</span>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>

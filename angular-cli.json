@@ -20,7 +20,8 @@
         "../node_modules/nprogress/nprogress.css",
         "../node_modules/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css",
         "../node_modules/jqvmap/dist/jqvmap.min.css",
-        "styles.css"
+        "styles.css",
+        "custom.css"
       ],
       "scripts": ["../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.js",

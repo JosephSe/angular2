@@ -16,7 +16,13 @@
 				</div>
 				<div class="x_content">
 					<div id="bar_chart_offer_status" [chartData]="offerByStatus" [chartOptions]="bar_ChartOptions_offer_status" chartType="Bar"
-						GoogleChart></div>
+						(loaded)="chartLoaded('byStatus')" GoogleChart></div>
+					<div class="pricing_footer no_bg_border" *ngIf="!byStatusLoaded">
+						<p>
+							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -27,7 +33,13 @@
 				</div>
 				<div class="x_content">
 					<div id="bar_chart_offer_staytype" [chartData]="offerByStayType" [chartOptions]="bar_ChartOptions_offer_staytype"
-						chartType="Bar" GoogleChart></div>
+						chartType="Bar" (loaded)="chartLoaded('byStay')" GoogleChart></div>
+					<div class="pricing_footer no_bg_border" *ngIf="!byStayLoaded">
+						<p>
+							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -39,7 +51,13 @@
 			</div>
 			<div class="x_content">
 				<div id="bar_chart_offer_code" [chartData]="offerByOfferCode" [chartOptions]="bar_ChartOptions_offer_code"
-					chartType="Bar" GoogleChart></div>
+					chartType="Bar" (loaded)="chartLoaded('byCode')" GoogleChart></div>
+					<div class="pricing_footer no_bg_border" *ngIf="!byCodeLoaded">
+						<p>
+							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</p>
+					</div>
 			</div>
 		</div>
 	</div>

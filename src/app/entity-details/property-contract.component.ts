@@ -12,6 +12,10 @@ import { GlobalVariableService } from "../shared/global-variable.service";
 })
 export class PropertyContractComponent {
 
+  public byStatusLoaded = false;
+  public byModelLoaded = false;
+  public byCurrencyLoaded = false;
+
   constructor(private location: Location, private _dataService: DataService, private globalVar: GlobalVariableService) {
     var data = globalVar.getPropertyContractData();
     if(data) {
@@ -23,6 +27,16 @@ export class PropertyContractComponent {
   }
   goBack(): void {
     this.location.back();
+  }
+
+    chartLoaded(chartType) {
+    if(chartType == 'byStatus') {
+      this.byStatusLoaded = true
+    } else if(chartType == 'byModel') {
+      this.byModelLoaded = true;
+    }else if(chartType == 'byCurrency') {
+      this.byCurrencyLoaded = true;
+    } 
   }
 
   public bar_ChartOptions = {

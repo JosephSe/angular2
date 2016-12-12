@@ -16,7 +16,13 @@
 				</div>
 				<div class="x_content">
 					<div id="bar_chart_contract_status" [chartData]="contractStatus" [chartOptions]="bar_ChartOptions_contract_status" chartType="Bar"
-						GoogleChart></div>
+						(loaded)="chartLoaded('byStatus')" GoogleChart></div>
+					<div class="pricing_footer no_bg_border" *ngIf="!byStatusLoaded">
+						<p>
+							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -27,7 +33,13 @@
 				</div>
 				<div class="x_content">
 					<div id="bar_chart_contract_by_model" [chartData]="contractByModel" [chartOptions]="bar_ChartOptions_contract_having_model"
-						chartType="Bar" GoogleChart></div>
+						chartType="Bar" (loaded)="chartLoaded('byModel')" GoogleChart></div>
+					<div class="pricing_footer no_bg_border" *ngIf="!byModelLoaded">
+						<p>
+							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -39,7 +51,13 @@
 			</div>
 			<div class="x_content">
 				<div id="bar_chart_contract_by_currency" [chartData]="contractByCurrency" [chartOptions]="bar_ChartOptions_contract_having_currency"
-					chartType="Bar" GoogleChart></div>
+					chartType="Bar" (loaded)="chartLoaded('byCurrency')" GoogleChart></div>
+					<div class="pricing_footer no_bg_border" *ngIf="!byCurrencyLoaded">
+						<p>
+							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+							<span class="sr-only">Loading...</span>
+						</p>
+					</div>
 			</div>
 		</div>
 	</div>

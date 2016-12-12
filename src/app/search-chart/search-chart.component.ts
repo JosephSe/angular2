@@ -15,7 +15,7 @@ export class SearchChartComponent {
 
   textColor = '#73879C'
 
-  public propertyLoaded = false;
+  public dataLoaded = false;
 
   constructor(private _dashboardService: DashboardService, private router: Router, private globalVar: GlobalVariableService) {
     var data = globalVar.getDashboardCountData();
@@ -27,10 +27,8 @@ export class SearchChartComponent {
   }
 
   chartLoaded(chartType) {
-    if(chartType == 'property') {
-      this.propertyLoaded = true
-    // } else if(chartType == 'byProvision') {
-      // this.byProvisionLoaded = true;
+    if(chartType == 'data') {
+      this.dataLoaded = true
     }
   }
 

@@ -12,9 +12,13 @@ import { GlobalVariableService } from "../shared/global-variable.service";
 })
 export class OfferComponent {
 
+  public byStatusLoaded = false;
+  public byStayLoaded = false;
+  public byCodeLoaded = false;
+
   constructor(private location: Location, private _dataService: DataService, private globalVar: GlobalVariableService) {
     var data = globalVar.getOfferData();
-    if(data) {
+    if (data) {
       this.loadOfferData(data);
     } else {
       _dataService.getOfferData().subscribe(summary => this.loadOfferData(summary));
@@ -23,6 +27,17 @@ export class OfferComponent {
   goBack(): void {
     this.location.back();
   }
+
+  chartLoaded(chartType) {
+    if (chartType == 'byStatus') {
+      this.byStatusLoaded = true
+    } else if (chartType == 'byStay') {
+      this.byStayLoaded = true;
+    } else if (chartType == 'byCode') {
+      this.byCodeLoaded = true;
+    }
+  }
+
 
   public bar_ChartOptions = {
   };
