@@ -23,6 +23,7 @@ import { InventoryUsageComponent } from './entity-details/inventory-usage.compon
 import { InventoryRestrictionsComponent } from './entity-details/inventory-restrictions.component';
 import { ProdDashboard2RoutingModule } from './app-routing.module';
 import { GlobalVariableService } from "./shared/global-variable.service";
+import { EntitySummaryComponent } from './entity-summary/entity-summary.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { GlobalVariableService } from "./shared/global-variable.service";
     ChartDirective,
     GoogleChartDirective,
     TopNavComponent,
-    OfferComponent
+    OfferComponent,
+    EntitySummaryComponent
   ],
   imports : [
     BrowserModule,

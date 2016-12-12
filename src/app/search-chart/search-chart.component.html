@@ -1,186 +1,23 @@
 <div class="row">
-	<div class="col-md-4">
-		<div class="x_panel tile">
-			<div (click)="getPropertyDetails()" class="x_title" style="cursor:pointer">
-				<h4> Property<span class="navbar-right fa fa-bar-chart fa-blue"></span></h4>
-			</div>
-			<div class="x_content">
-				<div id="pie_chart_Property" [chartData]="chartData_Property" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
-					GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<div class="col-md-4">
-		<div class="x_panel tile">
-			<div (click)="getPropertyContractDetails()" class="x_title" style="cursor:pointer">
-				<h4>Property Contract<span class="navbar-right fa fa-bar-chart fa-blue"></span></h4>
-			</div>
-			<div class="x_content">
-				<div id="pie_chart_PropertyContract" [chartData]="chartData_PropertyContract" [chartOptions]="pie_ChartOptions" chartType="Bar"
-					(loaded)="chartLoaded('data')" GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<entity-summary chartName='Property' routePath="property" [chartData]="chartData_Property" [chartOptions]="pie_ChartOptions" chartType="Bar"></entity-summary>
 
-	<div class="col-md-4">
-		<div class="x_panel tile">
-			<div (click)="getOfferDetails()" class="col-md-12 x_title" style="cursor:pointer">
-				<h4>Offer<span class="navbar-right fa fa-bar-chart fa-blue"></span></h4>
-			</div>
-			<div class="col-md-12 x_content">
-				<div id="pie_chart_Offer" [chartData]="chartData_Offer" [chartOptions]="pie_ChartOptions" chartType="Bar" 
-					(loaded)="chartLoaded('data')" GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<entity-summary chartName='Property Contract' routePath="property-contract" [chartData]="chartData_PropertyContract" [chartOptions]="pie_ChartOptions" chartType="Bar"></entity-summary>
 
-	<div class="col-md-4">
-		<div class="x_panel tile">
-			<div (click)="getRatePlanDetails()" class="col-md-12 x_title">
-				<h4>RatePlan</h4>
-			</div>
-			<div class="col-md-12 x_content">
-				<div id="pie_chart_RatePlan" [chartData]="chartData_RatePlan" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
-					GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<entity-summary chartName='Offer' routePath="offer" [chartData]="chartData_Offer" [chartOptions]="pie_ChartOptions" chartType="Bar"></entity-summary>
 
-	<div class="col-md-4">
-		<div class="x_panel tile">
-			<div (click)="getAdjustmentsDetails()" class="col-md-12 x_title">
-				<h4>Adjustment</h4>
-			</div>
-			<div class="col-md-12 x_content">
-				<div id="pie_chart_Adjustment" [chartData]="chartData_Adjustment" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
-					GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<entity-summary chartName='RatePlan' routePath="" [chartData]="chartData_RatePlan" [chartOptions]="pie_ChartOptions" chartType="Bar"></entity-summary>
 
-	<div class="col-md-4">
-		<div class="x_panel tile">
+	<entity-summary chartName='Adjustment' routePath="" [chartData]="chartData_Adjustment" [chartOptions]="pie_ChartOptions" chartType="Bar"></entity-summary>
 
-			<div (click)="getMarkupDetails()" class="col-md-12 x_title">
-				<h4>Markup</h4>
-			</div>
-			<div class="col-md-12 x_content">
-				<div id="pie_chart_Markup" [chartData]="chartData_Markup" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
-					GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
+	<entity-summary chartName='Markup' routePath="" [chartData]="chartData_Markup" [chartOptions]="pie_ChartOptions" chartType="Bar"></entity-summary>
 
-	</div>
-	<div class="col-md-4">
-		<div class="x_panel tile">
-			<div (click)="getInventoryRestrictionsDetails()" class="col-md-12 x_title">
-				<h4>Inventory Restriction</h4>
-			</div>
-			<div class="col-md-12 x_content">
-				<div id="pie_chart_InventoryRestrictions" [chartData]="chartData_InventoryRestrictions" [chartOptions]="pie_ChartOptions"
-					chartType="Bar" (loaded)="chartLoaded('data')" GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<entity-summary chartName='Inventory Restriction' routePath="" [chartData]="chartData_InventoryRestrictions" [chartOptions]="pie_ChartOptions" chartType="Bar"></entity-summary>
 
-	<div class="col-md-4">
-		<div class="x_panel tile">
+	<entity-summary chartName='Inventory Usage' routePath="" [chartData]="chartData_InventoryUsage" [chartOptions]="pie_ChartOptions" chartType="Bar"></entity-summary>
 
-			<div (click)="getInventoryUsageDetails()" class="col-md-12 x_title">
-				<h4>InventoryUsage</h4>
-			</div>
-			<div class="col-md-12 x_content">
-				<div id="pie_chart_InventoryUsage" [chartData]="chartData_InventoryUsage" [chartOptions]="pie_ChartOptions" chartType="Bar"
-					(loaded)="chartLoaded('data')" GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<entity-summary chartName='RoomRate' routePath="" [chartData]="chartData_RoomRate" [chartOptions]="pie_ChartOptions" chartType="Bar"></entity-summary>
 
-	<div class="col-md-4">
-		<div class="x_panel tile">
-
-			<div (click)="getRoomRateDetails()" class="col-md-12 x_title">
-				<h4>RoomRate</h4>
-			</div>
-			<div class="col-md-12 x_content">
-				<div id="pie_chart_RoomRate" [chartData]="chartData_RoomRate" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
-					GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="col-md-4">
-		<div class="x_panel tile">
-
-			<div (click)="getRateRuleDetails()" class="col-md-12 x_title">
-				<h4>RateRule</h4>
-			</div>
-			<div class="col-md-12 x_content">
-				<div id="pie_chart_RateRule" [chartData]="chartData_RateRule" [chartOptions]="pie_ChartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
-					GoogleChart></div>
-				<div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
-					<p>
-						<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-						<span class="sr-only">Loading...</span>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+	<entity-summary chartName='RateRule' routePath="" [chartData]="chartData_RateRule" [chartOptions]="pie_ChartOptions"  chartType="Bar"></entity-summary>
 
 </div>

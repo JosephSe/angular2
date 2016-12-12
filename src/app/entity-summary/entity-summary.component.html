@@ -1,0 +1,17 @@
+<div class="col-md-4">
+  <div class="x_panel tile">
+    <div (click)="navigate()" class="x_title" [ngStyle]="{cursor : navigationEnabled()? 'pointer' : 'not-allowed'}">
+      <h4>{{chartName}}<span class="navbar-right" [ngClass]="{'fa fa-bar-chart fa-blue' : navigationEnabled()}"></span></h4>
+    </div>
+    <div class="x_content">
+      <div id="{{chartName}}_id" [chartData]="chartData" [chartOptions]="chartOptions" chartType="Bar" (loaded)="chartLoaded('data')"
+        GoogleChart></div>
+      <div class="pricing_footer no_bg_border" *ngIf="!dataLoaded">
+        <p>
+          <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+          <span class="sr-only">Loading...</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
