@@ -154,12 +154,12 @@ export class SearchChartComponent {
       ['Coherence', data[8].systems.Coherence]
     ];
 
-/*    var pie_chart_data_RateRule = [
+    var pie_chart_data_RateRule = [
       ['System', 'Static', 'Margin'],
       ['GC', data[9].systems.GC, data[10].systems.GC],
       ['Coherence', data[9].systems.Coherence, data[10].systems.Coherence]
     ];
-*/
+
     this.chartData_Property = pie_chart_data_Property;
     this.chartData_PropertyContract = pie_chart_data_PropertyContract;
     this.chartData_RatePlan = pie_chart_data_RatePlan;
@@ -169,7 +169,7 @@ export class SearchChartComponent {
     this.chartData_InventoryUsage = pie_chart_data_InventoryUsage;
     this.chartData_Offer = pie_chart_data_Offer;
     this.chartData_RoomRate = pie_chart_data_RoomRate;
-    // this.chartData_RateRule = pie_chart_data_RateRule;
+    this.chartData_RateRule = pie_chart_data_RateRule;
 
   }
   getPropertyDetails(): void {

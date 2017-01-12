@@ -9,7 +9,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-md-6 col-sm-12 col-xs-12 ">
+		<div class="col-md-6">
 			<div class="x_panel tile">
 				<div class="x_title">
 					<h4>By type</h4>
@@ -27,7 +27,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-6 col-sm-12 col-xs-12 ">
+		<div class="col-md-6">
 			<div class="x_panel tile">
 				<div class="x_title">
 					<h4>By provision type</h4>
@@ -46,22 +46,23 @@
 		</div>
 	</div>
 
-	<div class="col-md-12 col-sm-12 col-xs-12 ">
-		<div class="x_panel tile">
-			<div class="x_title">
-				<h4>By category</h4>
-			</div>
-			<div class="x_content">
-				<div id="bar_chart_property_category" [chartData]="propertyByCategories" [chartOptions]="bar_ChartOptions_property_categories"
-					chartType="Bar" (loaded)="chartLoaded('byCategory')" GoogleChart></div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12 ">
+			<div class="x_panel tile">
+				<div class="x_title">
+					<h4>By category</h4>
+				</div>
+				<div class="x_content">
+					<div id="bar_chart_property_category" [chartData]="propertyByCategories" [chartOptions]="bar_ChartOptions_property_categories"
+						chartType="Bar" (loaded)="chartLoaded('byCategory')" GoogleChart></div>
 					<div class="pricing_footer no_bg_border" *ngIf="!byCategoryLoaded">
 						<p>
 							<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
 							<span class="sr-only">Loading...</span>
 						</p>
 					</div>
+				</div>
 			</div>
-
 		</div>
 	</div>
 </div>
